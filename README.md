@@ -85,7 +85,19 @@
 
 ---
 
-## 💻 Panduan Menjalankan
+## 📚 Buku Panduan Lengkap (Documentation)
+
+Untuk panduan mendalam dan langkah operasional harian, silakan baca dokumentasi terpisah berikut:
+
+- 🌐 [**Panduan Instalasi & Penggunaan Versi Web & PWA**](docs/PANDUAN_WEB.md)  
+  *Mencakup instalasi lokal Vite, konfigurasi hosting mandiri (Nginx/Vercel), instalasi mode PWA desktop/mobile, panduan operasional kasir harian, alur shift kasir, dan backup-restore database IndexedDB.*
+
+- 📱 [**Panduan Instalasi & Penggunaan Versi Aplikasi Android**](docs/PANDUAN_APLIKASI_ANDROID.md)  
+  *Mencakup cara download APK dari GitHub Actions Cloud Build, instalasi APK di smartphone/tablet kasir, konfigurasi printer thermal Bluetooth (58mm/80mm), navigasi bottom sheet, dan kompilasi mandiri via Capacitor.*
+
+---
+
+## 💻 Panduan Menjalankan Cepat
 
 ### 1. Menjalankan Versi Web (Local Development)
 ```bash
