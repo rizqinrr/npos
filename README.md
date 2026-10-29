@@ -1,18 +1,19 @@
 # nPOS - Sistem Kasir Pintar (Point of Sale)
 
-> **Proyek Rekonstruksi REA (Reverse Engineer Anything) dari SIGAP POS v2**  
-> **Dua Versi:** Web App (PWA) & Native Android App (APK via Capacitor)  
-> **Arsitektur:** Offline-First, TypeScript, React 19, Tailwind CSS, Dexie.js (IndexedDB 20 Tabel)
+> **Aplikasi Kasir Modern Offline-First untuk Toko Retail & F&B**  
+> **Dua Target Platform:** Web App (PWA) & Native Android App (APK via Capacitor)  
+> **Arsitektur:** Offline-First, TypeScript, React 19, Tailwind CSS v4, Dexie.js (IndexedDB 20 Tabel)
 
 ---
 
 ## 🚀 Fitur Utama nPOS
 
 1. **Operasional Kasir Touch-Screen:**
-   - Pencarian instan dan navigasi kategori produk.
+   - Antarmuka responsif ramah jempol (*mobile bottom sheet* & *desktop split-pane*).
+   - Pencarian instan dan navigasi filter kategori produk.
    - Keranjang belanja interaktif dengan pengaturan diskon per item (persentase `%` atau nominal `Rp`).
    - Kalkulator pembayaran tunai dengan tombol uang pas dan pecahan cepat (*10k, 20k, 50k, 100k*).
-   - Perhitungan uang kembalian otomatis.
+   - Perhitungan uang kembalian otomatis dengan kontras tinggi.
 
 2. **Pembayaran QRIS Dinamis Lokal:**
    - Konversi QRIS statis merchant menjadi **QRIS Dinamis dengan nominal pas** otomatis (EMVCo Tag 54).
@@ -56,7 +57,7 @@
 
 ---
 
-## 🛠️ Peta 20 Entitas Basis Data (Room v7 Parity)
+## 🛠️ Peta 20 Entitas Basis Data (IndexedDB Offline Engine)
 
 | No | Nama Tabel | Deskripsi |
 | :--- | :--- | :--- |
@@ -98,14 +99,5 @@ npm run build
 ```
 Hasil bundle web produksi akan disimpan di folder `dist/` lengkap dengan Service Worker offline caching dan web manifest.
 
-### 3. Membangun Versi Aplikasi Android APK (via Capacitor)
-Pastikan Android Studio & Android SDK telah terpasang di komputer Anda:
-```bash
-# 1. Bangun asset web & sinkronisasi ke project Android
-npm run build
-npx cap sync android
-
-# 2. Buka project Android di Android Studio
-npx cap open android
-```
-Di Android Studio, pilih menu **Build > Build Bundle(s) / APK(s) > Build APK(s)** untuk menghasilkan berkas `.apk` yang siap dipasang di tablet/HP kasir.
+### 3. Membangun Versi Aplikasi Android APK (via Cloud Build GitHub Actions)
+Cukup lakukan `git push` ke branch `main`. GitHub Actions akan otomatis mengompilasi APK siap install. File APK dapat diunduh di tab **Actions** repository GitHub atau langsung dari folder `release-apk/`.
