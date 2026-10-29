@@ -20,6 +20,7 @@ import { OpnameScreen } from '@/components/OpnameScreen'
 import { HistoryScreen } from '@/components/HistoryScreen'
 import { ExpenseScreen } from '@/components/ExpenseScreen'
 import { SettingsScreen } from '@/components/SettingsScreen'
+import { AboutScreen } from '@/components/AboutScreen'
 import { PaymentModal } from '@/components/PaymentModal'
 import { ReceiptModal } from '@/components/ReceiptModal'
 import { Menu, CircleCheck, CircleAlert, Clock as ClockIcon } from 'lucide-react'
@@ -111,7 +112,8 @@ export function App() {
     opname: { title: 'Stock Opname', subtitle: 'Audit fisik & rekonsiliasi selisih' },
     history: { title: 'Riwayat Transaksi', subtitle: 'Cetak ulang nota & retur barang' },
     expenses: { title: 'Biaya & Laba Rugi', subtitle: 'Pengeluaran toko & laporan P&L' },
-    settings: { title: 'Pengaturan', subtitle: 'Printer thermal, QRIS & backup' }
+    settings: { title: 'Pengaturan', subtitle: 'Printer thermal, QRIS & backup' },
+    about: { title: 'Tentang Developer', subtitle: 'Profil Rizqi Nur & info aplikasi nPOS' }
   }
 
   const currentTabInfo = tabTitles[activeTab] || { title: 'nPOS', subtitle: 'Aplikasi Kasir' }
@@ -255,6 +257,8 @@ export function App() {
               onStoreUpdated={refreshData}
             />
           )}
+
+          {activeTab === 'about' && <AboutScreen />}
         </main>
       </div>
 

@@ -14,7 +14,8 @@ import {
   CircleAlert,
   Store,
   WifiOff,
-  X
+  X,
+  User
 } from 'lucide-react'
 import type { CashierShift, StoreSetting } from '@/db/types'
 
@@ -91,6 +92,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       label: 'Pengaturan',
       sublabel: 'Printer, QRIS & Backup',
       icon: Settings
+    },
+    {
+      id: 'about',
+      label: 'Tentang Developer',
+      sublabel: 'Profil Rizqi Nur & Info',
+      icon: User
     }
   ]
 
